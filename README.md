@@ -105,13 +105,16 @@
 <div align="center">
 
 ### 🏠 Start Screen
-![Start Screen](https://via.placeholder.com/400x250/667eea/ffffff?text=Start+Screen)
+<img width="1153" height="711" alt="Start_screen" src="https://github.com/user-attachments/assets/6b6f868a-b751-484f-953f-514122fe6f24" />
+
 
 ### 🎯 Quiz Interface
-![Quiz Interface](https://via.placeholder.com/400x250/764ba2/ffffff?text=Quiz+Interface)
+<img width="968" height="882" alt="Quiz_interface" src="https://github.com/user-attachments/assets/2f304471-0b16-4c31-b8f8-d111dc2a8389" />
+
 
 ### 🏆 Results Screen
-![Results Screen](https://via.placeholder.com/400x250/f093fb/ffffff?text=Results+Screen)
+<img width="983" height="787" alt="Result_Screen" src="https://github.com/user-attachments/assets/9eefdc62-aa99-4df3-9fc3-9d559411299d" />
+
 
 </div>
 
@@ -255,5 +258,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 **Made with ❤️ for the coding community**
 
 [⭐ Star this repo](#) • [🐛 Report issues](#) • [💡 Request features](#)
+
 
 </div> 

@@ -18,7 +18,6 @@
 ## 📖 Table of Contents
 
 - [✨ Features](#-features)
-- [🎮 Live Demo](#-live-demo)
 - [🚀 Getting Started](#-getting-started)
 - [📱 Screenshots](#-screenshots)
 - [🛠️ Tech Stack](#️-tech-stack)
@@ -53,13 +52,10 @@
 - **Performance Feedback** - Personalized messages with emojis
 - **"Time's Up!" Display** - Clear overlay when timer expires
 
----
+### 🔒 Authentication & Security
+- **Signup/Login** - Secure authentication with localStorage persistence
+- **Password Strength Validation** - Real-time feedback and requirements for strong passwords
 
-## 🎮 Live Demo
-
-**[Play the Quiz Game Here](#)** *(Coming Soon)*
-
----
 
 ## 🚀 Getting Started
 
@@ -105,16 +101,13 @@
 <div align="center">
 
 ### 🏠 Start Screen
-<img width="1153" height="711" alt="Start_screen" src="https://github.com/user-attachments/assets/6b6f868a-b751-484f-953f-514122fe6f24" />
-
+![Start Screen](https://via.placeholder.com/400x250/667eea/ffffff?text=Start+Screen)
 
 ### 🎯 Quiz Interface
-<img width="968" height="882" alt="Quiz_interface" src="https://github.com/user-attachments/assets/2f304471-0b16-4c31-b8f8-d111dc2a8389" />
-
+![Quiz Interface](https://via.placeholder.com/400x250/764ba2/ffffff?text=Quiz+Interface)
 
 ### 🏆 Results Screen
-<img width="983" height="787" alt="Result_Screen" src="https://github.com/user-attachments/assets/9eefdc62-aa99-4df3-9fc3-9d559411299d" />
-
+![Results Screen](https://via.placeholder.com/400x250/f093fb/ffffff?text=Results+Screen)
 
 </div>
 
@@ -259,5 +252,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 [⭐ Star this repo](#) • [🐛 Report issues](#) • [💡 Request features](#)
 
-
-</div> 
+</div>

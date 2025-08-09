@@ -1,3 +1,86 @@
+/* --- Button Hover/Click Effects --- */
+.btn {
+    transition: transform 0.13s cubic-bezier(.4,2,.6,1), box-shadow 0.18s, background 0.18s;
+}
+.btn:hover, .btn:focus {
+    transform: scale(1.06);
+    box-shadow: 0 4px 18px rgba(102,126,234,0.18), 0 1.5px 6px rgba(118,75,162,0.10);
+    background: linear-gradient(90deg, #667eea 60%, #764ba2 100%);
+    color: #fff;
+}
+.btn:active {
+    transform: scale(0.97);
+    box-shadow: 0 1px 4px rgba(102,126,234,0.10);
+}
+
+/* --- Screen Transitions --- */
+.screen {
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(0.98) translateY(20px);
+    transition: opacity 0.45s cubic-bezier(.4,2,.6,1), transform 0.45s cubic-bezier(.4,2,.6,1);
+}
+.screen.active {
+    opacity: 1;
+    pointer-events: auto;
+    transform: scale(1) translateY(0);
+    z-index: 2;
+}
+
+/* --- Option Selection Animation --- */
+.option {
+    transition: box-shadow 0.18s, background 0.18s, transform 0.18s cubic-bezier(.4,2,.6,1);
+}
+.option.selected {
+    background: linear-gradient(90deg, #f093fb 0%, #667eea 100%);
+    color: #fff;
+    box-shadow: 0 4px 18px rgba(240,147,251,0.18), 0 1.5px 6px rgba(102,126,234,0.10);
+}
+.option.incorrect {
+    animation: optionBounce 0.38s cubic-bezier(.4,2,.6,1), optionShake 0.38s cubic-bezier(.4,2,.6,1);
+    background: #ffe0e6;
+    color: #dc3545;
+}
+@keyframes optionBounce {
+    0% { transform: scale(1) rotate(0); }
+    40% { transform: scale(1.13) rotate(-2deg); }
+    70% { transform: scale(0.97) rotate(1deg); }
+    100% { transform: scale(1.07) rotate(-1deg); }
+}
+@keyframes optionShake {
+    0% { transform: translateX(0); }
+    20% { transform: translateX(-7px); }
+    40% { transform: translateX(7px); }
+    60% { transform: translateX(-5px); }
+    80% { transform: translateX(5px); }
+    100% { transform: translateX(0); }
+}
+
+/* --- Bubble Variations --- */
+.bubble {
+    background: radial-gradient(circle at 60% 40%, #f093fb 0%, #667eea 100%);
+    opacity: 0.7;
+    box-shadow: 0 2px 12px rgba(118,75,162,0.13);
+    transition: background 0.3s, box-shadow 0.3s;
+    position: absolute;
+}
+.bubble:nth-child(3n) {
+    background: radial-gradient(circle at 40% 60%, #28a745 0%, #20c997 100%);
+    opacity: 0.6;
+}
+.bubble:nth-child(4n) {
+    background: radial-gradient(circle at 70% 30%, #ffe066 0%, #f093fb 100%);
+    opacity: 0.5;
+}
+.bubble.star {
+    width: 16px !important;
+    height: 16px !important;
+    background: gold !important;
+    border-radius: 50% 50% 50% 50%/60% 60% 40% 40%;
+    box-shadow: 0 0 16px 4px #ffe06699;
+    opacity: 0.85;
+    position: absolute;
+}
 * {
     margin: 0;
     padding: 0;
@@ -49,12 +132,15 @@ body::before {
 .screen {
     display: none;
     background: rgba(255, 255, 255, 0.95);
+    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     border-radius: 20px;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     animation: slideIn 0.5s ease-out;
     border: 1px solid rgba(255, 255, 255, 0.2);
+    position: relative;
+    z-index: 2;
 }
 
 .screen.active {
@@ -269,7 +355,6 @@ body::before {
     border-color: #28a745;
     background: linear-gradient(135deg, #28a745, #20c997);
     color: white;
-    animation: correctPulse 0.6s ease-out;
 }
 
 @keyframes correctPulse {
@@ -282,7 +367,7 @@ body::before {
     border-color: #dc3545;
     background: linear-gradient(135deg, #dc3545, #fd7e14);
     color: white;
-    animation: incorrectShake 0.6s ease-out;
+    animation: incorrectShake 0.6s ease-out, optionBounce 0.38s cubic-bezier(.4,2,.6,1);
 }
 
 @keyframes incorrectShake {
@@ -535,4 +620,266 @@ body::before {
         gap: 10px;
         text-align: center;
     }
+} 
+
+/* Login Screen */
+.login-content h1 {
+    font-size: 2.5rem;
+}
+
+.login-form {
+    display: grid;
+    gap: 15px;
+    margin: 20px auto 30px;
+    max-width: 360px;
+}
+
+.input {
+    width: 100%;
+    padding: 14px 16px;
+    border: 2px solid #e9ecef;
+    border-radius: 12px;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.2s ease;
+    background: #fff;
+}
+
+.input:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.15);
+}
+
+/* Fullscreen Quiz Screen */
+
+.screen.fullscreen {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    min-width: 100vw;
+    min-height: 100vh;
+    max-width: 100vw;
+    max-height: 100vh;
+    border-radius: 0;
+    margin: 0;
+    overflow: auto;
+    border: none;
+    box-shadow: none;
+    z-index: 1000;
+}
+
+/* Refined Fullscreen override for better desktop fit */
+
+/* (Removed duplicate/overriding .screen.fullscreen rules for clarity) */
+
+/* HD layout tweaks for 1920x1080 and above */
+@media (min-width: 1900px) and (min-height: 1000px) {
+    .quiz-header {
+        padding: 40px 80px;
+    }
+    .question-container {
+        padding: 60px 80px;
+    }
+    #question-text {
+        font-size: 2rem;
+    }
+    .option {
+        padding: 24px 26px;
+        font-size: 1.1rem;
+    }
+    .option-letter {
+        width: 48px;
+        height: 48px;
+        font-size: 1.2rem;
+    }
+    .progress-bar {
+        height: 10px;
+    }
+    .results-content {
+        padding: 80px 60px;
+    }
+    .results-content h1 {
+        font-size: 3rem;
+    }
+} 
+
+/* Final consolidated fullscreen rule to ensure full viewport coverage */
+
+/* (Handled above, keep only one .screen.fullscreen rule) */
+
+/* Native fullscreen styling */
+#quiz-screen:fullscreen {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    min-width: 100vw;
+    min-height: 100vh;
+    max-width: 100vw;
+    max-height: 100vh;
+    border-radius: 0;
+    margin: 0;
+    border: none;
+    box-shadow: none;
+    z-index: 1000;
+}
+
+/* Creative animations */
+/* Glow text for headings */
+.glow-text {
+    animation: neonGlow 2.5s ease-in-out infinite alternate;
+}
+
+@keyframes neonGlow {
+    0% { text-shadow: 0 0 6px rgba(255,255,255,0.2), 0 0 12px rgba(118,75,162,0.2); }
+    100% { text-shadow: 0 0 10px rgba(255,255,255,0.35), 0 0 20px rgba(118,75,162,0.45); }
+}
+
+/* Info items stagger */
+.quiz-info .info-item {
+    opacity: 0;
+    transform: translateY(8px);
+    animation: fadeSlideUp 0.6s ease-out forwards;
+}
+.quiz-info .info-item:nth-child(1) { animation-delay: 0.05s; }
+.quiz-info .info-item:nth-child(2) { animation-delay: 0.15s; }
+.quiz-info .info-item:nth-child(3) { animation-delay: 0.25s; }
+.quiz-info .info-item:nth-child(4) { animation-delay: 0.35s; }
+
+@keyframes fadeSlideUp {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Question and options entrance */
+.question-enter {
+    animation: fadeSlideUp 0.5s ease-out both;
+}
+.option-enter {
+    animation: popIn 0.35s ease-out both;
+}
+@keyframes popIn {
+    0% { opacity: 0; transform: translateY(10px) scale(0.96); }
+    60% { opacity: 1; transform: translateY(0) scale(1.02); }
+    100% { transform: scale(1); }
+}
+
+/* Progress shine */
+.progress-fill {
+    position: relative;
+}
+.progress-fill::after {
+    content: '';
+    position: absolute;
+    top: 0; bottom: 0; left: -30%; width: 30%;
+    background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.6) 50%, rgba(255,255,255,0) 100%);
+    animation: shineSweep 4s ease-in-out infinite;
+}
+@keyframes shineSweep {
+    0%, 10% { transform: translateX(0); opacity: 0; }
+    20% { opacity: 1; }
+    50% { transform: translateX(350%); opacity: 1; }
+    60%, 100% { opacity: 0; }
+}
+
+/* Click ripple */
+.option, .btn { position: relative; overflow: hidden; }
+.ripple {
+    position: absolute;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(102, 126, 234, 0.25);
+    animation: rippleExpand 600ms ease-out forwards;
+    pointer-events: none;
+}
+@keyframes rippleExpand {
+    from { width: 0; height: 0; opacity: 0.5; }
+    to { width: 300px; height: 300px; opacity: 0; }
+}
+
+/* Sparkle burst for correct answer */
+.sparkle {
+    position: absolute;
+    width: 8px; height: 8px;
+    background: radial-gradient(circle, #fff 0%, #f093fb 40%, rgba(240,147,251,0) 70%);
+    border-radius: 50%;
+    animation: sparklePop 700ms ease-out forwards;
+    pointer-events: none;
+    filter: drop-shadow(0 0 6px rgba(240,147,251,0.7));
+}
+@keyframes sparklePop {
+    0% { transform: translate(0,0) scale(0.5); opacity: 1; }
+    70% { transform: translate(var(--sx), var(--sy)) scale(1.1); opacity: 1; }
+    100% { transform: translate(var(--sx), var(--sy)) scale(0.8); opacity: 0; }
+} 
+
+/* Bubbles overlay for login/results */
+.bubbles-container {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+}
+.start-content, .results-content, .quiz-header, .question-container, .quiz-footer {
+    position: relative;
+    z-index: 2;
+}
+
+.bubble {
+    position: absolute;
+    bottom: -12px;
+    border-radius: 50%;
+    /* themed bubble visuals */
+    background: radial-gradient(circle at 30% 30%, rgba(102,126,234,0.55), rgba(240,147,251,0.4) 60%, rgba(255,255,255,0.05));
+    opacity: 0.65;
+    mix-blend-mode: screen;
+    border: 1px solid rgba(255,255,255,0.35);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    animation: bubbleUp linear forwards;
+    filter: blur(0.3px);
+}
+
+@keyframes bubbleUp {
+    from { transform: translateY(0) translateX(0); opacity: 0.75; }
+    70% { opacity: 0.9; }
+    to { transform: translateY(-120%) translateX(var(--drift, 0px)); opacity: 0; }
+}
+
+/* Fireworks dots on results */
+.firework-dot {
+    position: absolute;
+    width: 6px; height: 6px;
+    background: radial-gradient(circle, #fff 0%, #f093fb 40%, rgba(240,147,251,0) 70%);
+    border-radius: 50%;
+    animation: fireworkPop 0.85s ease-out forwards;
+    pointer-events: none;
+    filter: drop-shadow(0 0 6px rgba(240,147,251,0.7));
+}
+
+@keyframes fireworkPop {
+    0% { transform: translate(0,0) scale(0.7); opacity: 1; }
+    80% { transform: translate(var(--tx), var(--ty)) scale(1); opacity: 1; }
+    100% { transform: translate(var(--tx), var(--ty)) scale(0.9); opacity: 0; }
+} 
+
+/* Full-viewport ambient bubbles (behind content) */
+#ambient-bubbles {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 1;
+} 
+
+/* Ambient bubbles override: start anywhere and use bubbleFloat */
+#ambient-bubbles .bubble {
+    bottom: auto;
+}
+
+@keyframes bubbleFloat {
+    from { transform: translate(0, 0); opacity: 0.75; }
+    70% { opacity: 0.9; }
+    to { transform: translate(var(--drift, 0px), var(--rise, -80vh)); opacity: 0; }
 } 

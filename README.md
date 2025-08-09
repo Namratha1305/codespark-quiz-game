@@ -2,7 +2,7 @@
 
 An interactive, animated web-based quiz game with authentication, password strength validation, and persistent user progress. Built with vanilla HTML, CSS, and JavaScript.
 
-## Features
+## Features 🤩
 
 - **Welcome Page:** Animated welcome screen with bubbles, inviting users to sign up or log in.
 - **Signup/Login Flow:**
@@ -26,7 +26,7 @@ An interactive, animated web-based quiz game with authentication, password stren
   - Smooth screen transitions and option entrance animations.
   - Responsive design for desktop and mobile.
 
-## Screenshots
+## Screenshots📸
 <img width="1440" height="757" alt="Login_screen" src="https://github.com/user-attachments/assets/777a0d21-6738-4c2e-a1c9-4ff39e90be57" />
 
 <img width="1011" height="546" alt="Start_screen" src="https://github.com/user-attachments/assets/4445727d-157d-4f04-ba8d-3ff6078836e5" />
@@ -42,7 +42,7 @@ An interactive, animated web-based quiz game with authentication, password stren
 3. Sign up with a username and a strong password (see requirements below).
 4. Log in and start the quiz!
 
-## Password Requirements
+## Password Requirements 🔑
 - At least 8 characters
 - At least 1 capital letter
 - At least 3 numbers
@@ -69,9 +69,10 @@ An interactive, animated web-based quiz game with authentication, password stren
 ## License
 MIT
 
-## Credits
+## Credits 👏👏
 - Cursor.ai
 - Kilo code
 - Gemini AI Pro
+
 
 

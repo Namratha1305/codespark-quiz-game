@@ -8,9 +8,52 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div id="ambient-bubbles"></div>
     <div class="container">
+        <!-- Welcome Screen -->
+        <div id="welcome-screen" class="screen active">
+            <div class="start-content">
+                <h1>👋 Welcome to CodeSpark Quiz</h1>
+                <p>Sharpen your coding skills with fun questions!</p>
+                <button id="goto-signup-btn" class="btn btn-primary" style="margin-bottom: 16px;">Sign Up</button>
+                <div style="margin-top: 10px;">
+                    <span>If you've already registered, </span>
+                    <button id="goto-login-btn" class="btn btn-secondary" style="display: inline-block;">Login</button>
+                </div>
+            </div>
+        </div>
+        <!-- Login/Signup Screen -->
+        <div id="login-screen" class="screen">
+            <div class="bubbles-container" id="login-bubbles"></div>
+            <div class="start-content login-content">
+                <h1 id="login-title">🔐 CodeSpark Login</h1>
+                <p id="login-desc">Sign in to begin your quiz.</p>
+                <!-- Signup form -->
+                <div id="signup-form" class="login-form" style="display:none;">
+                    <div class="form-group">
+                        <input id="signup-username" type="text" class="input" placeholder="Choose a username" autocomplete="username">
+                    </div>
+                    <div class="form-group">
+                        <input id="signup-password" type="password" class="input" placeholder="Choose a password" autocomplete="new-password">
+                    </div>
+                    <button id="signup-btn" class="btn btn-primary">Sign Up</button>
+                    <p id="signup-success" style="color: #28a745; display: none; margin-top: 10px;">Signup successful! Please log in.</p>
+                </div>
+                <!-- Login form -->
+                <div id="login-form" class="login-form" style="display:none;">
+                    <div class="form-group">
+                        <input id="username" type="text" class="input" placeholder="Username" autocomplete="username">
+                    </div>
+                    <div class="form-group">
+                        <input id="password" type="password" class="input" placeholder="Password" autocomplete="current-password">
+                    </div>
+                    <button id="login-btn" class="btn btn-primary">Login</button>
+                </div>
+            </div>
+        </div>
+        
         <!-- Start Screen -->
-        <div id="start-screen" class="screen active">
+        <div id="start-screen" class="screen">
             <div class="start-content">
                 <h1>🚀 CodeSpark Quiz 🚀</h1>
                 <p>Test your knowledge with our interactive quiz!</p>
@@ -27,10 +70,6 @@
                         <span class="icon">🎯</span>
                         <span>Real-time scoring</span>
                     </div>
-                    <!-- <div class="info-item">
-                        <span class="icon">🔄</span>
-                        <span>Randomized questions</span>
-                    </div> -->
                 </div>
                 <button id="start-btn" class="btn btn-primary">🚀 Start Coding Quiz</button>
             </div>

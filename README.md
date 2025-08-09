@@ -8,6 +8,9 @@ An interactive, animated web-based quiz game with authentication, password stren
 - **Signup/Login Flow:**
   - Secure signup and login with localStorage persistence.
   - Password strength meter with requirements: at least 8 characters, 1 capital letter, 3 numbers, and one of @, $, &, !
+  - Eye icon to toggle password visibility.
+  - Prevents duplicate registration (same username or password) with a popup.
+  - Enter key submits forms for accessibility.
 - **Quiz Experience:**
   - Multiple-choice questions (15+), randomized order each session.
   - Timer (30 seconds per question) with animated warning.
@@ -73,6 +76,7 @@ MIT
 - Cursor.ai
 - Kilo code
 - Gemini AI Pro
+
 
 
 

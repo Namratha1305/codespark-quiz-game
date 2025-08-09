@@ -1,4 +1,4 @@
-# CodeSpark Quiz Game
+# CodeSpark Quiz Game🎉🎮
 
 An interactive, animated web-based quiz game with authentication, password strength validation, and persistent user progress. Built with vanilla HTML, CSS, and JavaScript.
 
@@ -32,8 +32,6 @@ An interactive, animated web-based quiz game with authentication, password stren
 <img width="1011" height="546" alt="Start_screen" src="https://github.com/user-attachments/assets/4445727d-157d-4f04-ba8d-3ff6078836e5" />
 
 <img width="1883" height="1027" alt="Quiz_interface" src="https://github.com/user-attachments/assets/97bd9eff-e16e-436e-86f3-c5d1628593c0" />
-
-<img width="992" height="892" alt="Toggled_rectangular_interface" src="https://github.com/user-attachments/assets/55c065fc-8bb8-44c3-abf7-0111911a7951" />
 
 <img width="1072" height="812" alt="Result_Screen" src="https://github.com/user-attachments/assets/63a76600-ccc4-40d7-afb1-8750f890f534" />
 
@@ -75,4 +73,5 @@ MIT
 - Cursor.ai
 - Kilo code
 - Gemini AI Pro
+
 
